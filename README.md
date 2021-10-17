@@ -2,7 +2,7 @@
 
 ## 📖 About
 
-Este trabalho foi desenvolvido para a cadeira de Modelagem de Software, o intuito foi ter a vivência de um projeto de software, o tema é Jogo da Memória e a temática escolhida foi Naruto.
+Este trabalho foi desenvolvido para a cadeira de Modelagem de Software, o intuito foi ter a vivência de um projeto de software, o software desenvolvido é um Jogo da Memória e a temática escolhida foi Naruto.
 
 ## 🔧 Stack
 Tecnologias utilizadas:
