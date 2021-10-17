@@ -20,6 +20,6 @@ Com a finalidade de deixar os arquivos mais organizados, foram criadas pastas se
 • Douglas Tomazini (@douglastomazini)
 • Felipe Farias (@felps7k)
 
-## Preview Work
+## Work Preview
 
 ![Final Preview](https://github.com/felps7k/memory-game/blob/main/preview.png)
