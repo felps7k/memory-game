@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: none;
+  text-align: center;
+  color: #6e1423;
+}
+h2 {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  color: #85182a;
+}
+h3 {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  color: #85182a;
+}
+body {
+  height: 100vh;
+  display: flex;
+  background-image: url(../img/bg.jpg);
+  background-repeat: repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+dt{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.memory-game {
+  width: 1000px;
+  height: 640px;
+  margin: auto;
+  display: grid;
+  perspective: 1000px;
+  grid-template-columns: auto auto;
+  /* align-content: space-between; */
+  justify-content: space-evenly;
+}
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  /*box-shadow: 1px 1px 1px rgba(0,0,0,.3);*/
+}
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+.front-face, .back-face {
+  width: 150px;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  border-radius: 15px;
+  background: white;
+  backface-visibility: hidden;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
+}
+.front-face {
+  transform: rotateY(180deg);
+}
+.dados {
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  position: right;
+  border-radius: 15px;
+  background: white; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.cronometro{
+  font-family: 'Comfortaa', cursive;
+  width: 100%;
+  text-align: center;
+}
+.botao{
+  align-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px ;
+  padding-top: 15px;
+}
+.button1{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button2{
+  background-color:#f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.pontuacao{
+  text-align: center;
+  width: 100%;
+}
+.button_guri img{
+  height: auto;
+  width: 50%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}

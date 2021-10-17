@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="styles-f.css">
+</head>
+<script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+<body>
+  <section class="memory-game">
+    <div class="memory-card" data-framework="naruto">
+      <img class="front-face" src="../img/naruto.png" alt="naruto" />
+      <img class="back-face" src="../img/back.png" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="naruto">
+      <img class="front-face" src="../img/naruto.png" alt="naruto" />
+      <img class="back-face" src="../img/back.png" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="sasuke">
+      <img class="front-face" src="../img/sasuke.png" alt="sasuke" />
+      <img class="back-face" src="../img/back.png" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="sasuke">
+      <img class="front-face" src="../img/sasuke.png" alt="sasuke" />
+      <img class="back-face" src="../img/back.png" alt="JS Badge" />
+    </div>
+  </section>
+  <form name="form_main">
+    <div class="dados">
+      <div class="cronometro">
+        <h1>Tempo</h1>
+        <h2><span id="minute">00</span>:<span id="second">00</span></h2>
+        <div class="botao">
+          <button class="button1" type="button" name="start">Start</button>
+          <button class="button2" type="button" name="pause">Pause</button>
+        </div>
+      </div>
+      <div class="pontuacao">
+        <h1>Pontos</h1>  
+        <h2 id="pontos">0</h2>
+      </div>
+      <div>
+        <a class="button_guri" type="button" onclick="javascript: ajuda()">
+          <img src="img/byakugan.png">
+        </a>
+        <h3>Byakugan</h3>
+      </div>
+    </div>
+  </form>
+  <!-- Modal Start -->
+  <div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLongTitle">Memory Game</h1>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><font style="vertical-align: inherit;">Para iniciar o jogo clique no botão Start.</p>
+          <p>A cada par encontrado você ganha 5 pontos.</p>
+          <p>A cada vitória você ganha 20 pontos.</p>
+          <p>Você tem 10 segundos para encontrar todos os pares.</p>
+          <p>Quanto mais jogar, mais pontos você ganha!</p></font>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Win -->
+  <div class="modal fade" id="modalwin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLongTitle">Você Ganhou!</h1>
+        </div>
+        <div class="modal-body">
+          <p><font style="vertical-align: inherit;">Parabéns! Você quer jogar novamente?</font></p>
+        </div>
+        <div class="modal-footer">
+          <a data-backdrop="static" data-toggle="modal" href="#modallose" class="btn btn-secondary">Não</a>
+          <button type="button" class="btn btn-primary" onclick="javascript: reRun()">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Lose -->
+  <div class="modal fade" id="modallose" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="exampleModalLongTitle">Você Perdeu!</h1>
+        </div>
+        <div class="modal-body">
+          <div class="todo">
+            <dl class="menu">
+              <div class="todo__title">
+                <dt><h2>Digite seu nome:</h2></dt>
+                <dt><input type="text" id="newItem" placeholder="Digite e aperte Enter"></dt>
+              </div>
+            </dl>
+          <!--<div class="todo_list" id="todoList">
+        </div>-->
+        <!--<div class="modal-footer">
+          <button type="button" class="btn btn-secondary">Enviar</button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <script src="scripts-f.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    text-shadow: none;
+    text-align: center;
+    color: #6e1423;
+}
+h2 {
+    font-family: 'Bebas Neue', cursive;
+    text-align: left;
+    color: #85182a;
+}
+p {
+    font-family: 'Comfortaa', cursive;
+    text-transform: none;
+    text-indent: 20px;
+    color: black;
+    line-height: 100%;
+}
+body {
+    background-image: url(img/bg.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+ul li {
+    list-style-type: square;
+    list-style-position: outside;
+    list-style-image: none;
+}
+label {
+    font-family: 'Comfortaa', cursive;
+    color: black;
+    padding-left: 10px;
+}
+form {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+}
+details {
+    margin-left: 20px;
+}
+.div-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    padding:1px 24px 1px;
+    margin: auto;
+    vertical-align: middle;
+    background-color: white;
+}
+.divisoria {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 70%;
+    padding:1px 24px 1px;
+    margin: auto;
+    background-color: #85182a;
+}
+.div-corpo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    padding: 1px 24px 1px;
+    margin: 0;
+    vertical-align: middle;
+    background-color: white;
+}
+a{
+    font-family: 'Comfortaa', cursive;
+}
+a:link {
+    text-decoration:none;
+    color: #85182a;
+}
+a:visited {
+    text-decoration: none;
+    color: #6e1423;
+}
+a:hover {
+    text-decoration: none;
+    color: #2b0000
+}
+a:active {
+    text-decoration: none;
+}
+.menu {
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.text-cent {
+    text-align: center;
+    font-style: oblique;
+    font-stretch: extra-expanded;
+    font-variant: small-caps;
+    font-size: medium;
+    color: black;
+}
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+:root {
+    --primary-color: #f52346;
+    --secondary-color: #0F0F0B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-color);
+    font: bold 2rem 'Open Sans', sans-serif;
+}
+
+.todo {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.todo__title {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.todo__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 70%;
+    padding: 1px 24px 1px;
+    margin: auto;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.todo__item{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+}
+.todo__item > div {
+    width: 80%;
+}
+.todo__item:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+.todo__item > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.todo__item > input[type='button'],
+.todo__item > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+}
+
+
+.todo__item > input[type='checkbox']:checked  + div {
+    text-decoration:line-through;
+}
+
+.todo__new-item{
+    display: flex;
+    background-color: #fff59d;
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    margin: 10px;
+    font: inherit;
+    opacity: 0.0;
+}
+
+.todo__new-item > input{
+    background-color: #fff59d;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.todo__new-item > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+}

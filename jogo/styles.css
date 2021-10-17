@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: none;
+  text-align: center;
+  color: #6e1423;
+}
+h2 {
+  font-family: 'Bebas Neue', cursive;
+  text-align: left;
+  color: #85182a;
+}
+body {
+  height: 100vh;
+  display: flex;
+  background-image: url(../img/bg.jpg);
+  background-repeat: repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+dt{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.memory-game {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  display: grid;
+  perspective: 1000px;
+  grid-template-columns: auto auto auto auto auto auto;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  /*box-shadow: 1px 1px 1px rgba(0,0,0,.3);*/
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  border-radius: 15px;
+  background: white;
+  backface-visibility: hidden;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
+}
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.modal-container{
+  width: 100vw;
+  height: 100vh;
+  background: rgba (0,0,0,.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.mostrar{
+  display: flex;
+
+}
+
+.modal{
+  background: white;
+  width: 60%;
+  min-width: 300px;
+  padding: 40px;
+  border: 10px solid #a11d33;
+  border-radius: 15px;
+  position: relative;
+}
+
+@keyframes modal {
+  from{
+    opacity:0;
+    transform: translate3d(0, -60px,0);
+  }
+
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0px,0);
+  }
+}
+
+.mostrar .modal{
+  animation: modal .3s;
+}
+.fechar{
+  position: absolute;
+  font-size: 4.0mm;
+  top: -30px;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid green 
+}
+
+.encerrar{
+  position: absolute;
+  font-size: 4.0mm;
+  left: 0px;
+  bottom: 0px;
+  width: 50px;
+  height: 50px;
+  border: 4px solid green 
+}
