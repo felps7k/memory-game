@@ -22,4 +22,4 @@ Com a finalidade de deixar os arquivos mais organizados, foram criadas pastas se
 
 ## Preview Work
 
-![Final Preview](https://github.com/felps7k/memory-game/blob/master/preview.png)
+![Final Preview](https://github.com/felps7k/memory-game/blob/main/preview.png)
