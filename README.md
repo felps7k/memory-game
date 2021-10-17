@@ -4,7 +4,9 @@
 Tecnologias utilizadas:
 
 • HTML
+
 • JavaScript
+
 • CSS
 
 ## 📋 Frameworks
@@ -17,7 +19,8 @@ Com a finalidade de deixar os arquivos mais organizados, foram criadas pastas se
 
 ### ✒️ Author
 
-• Douglas Tomazini (@douglastomazini)
+• Douglas Tomazini (@DouglasTomazini)
+
 • Felipe Farias (@felps7k)
 
 ## Work Preview
