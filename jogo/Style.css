@@ -1,116 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 h1 {
-    font-family: 'Bebas Neue', cursive;
-    text-shadow: none;
-    text-align: center;
-    color: #6e1423;
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: none;
+  text-align: center;
+  color: #6e1423;
 }
 h2 {
-    font-family: 'Bebas Neue', cursive;
-    text-align: left;
-    color: #85182a;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  color: #85182a;
 }
-p {
-    font-family: 'Comfortaa', cursive;
-    text-transform: none;
-    text-indent: 20px;
-    color: black;
-    line-height: 100%;
+h3 {
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  color: #85182a;
 }
 body {
-    background-image: url(img/bg.png);
-    background-repeat: repeat;
-    background-position: center;
-    background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  background-image: url(../img/bg.jpg);
+  background-repeat: repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: column;
+dt{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
-ul li {
-    list-style-type: square;
-    list-style-position: outside;
-    list-style-image: none;
+.memory-game {
+  width: 1150px;
+  height: 800px;
+  margin: auto;
+  display: grid;
+  perspective: 1000px;
+  grid-template-columns: auto auto auto auto;
+  align-content: stretch;
+  justify-content: space-evenly;
 }
-label {
-    font-family: 'Comfortaa', cursive;
-    color: black;
-    padding-left: 10px;
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  /*box-shadow: 1px 1px 1px rgba(0,0,0,.3);*/
 }
-form {
-    font-family: 'Comfortaa', cursive;
-    text-align: center;
+.front-face, .back-face {
+  width: 110px;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  border-radius: 15px;
+  background: white;
+  backface-visibility: hidden;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 30%);
 }
-details {
-    margin-left: 20px;
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
 }
-.div-menu {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 70%;
-    padding:1px 24px 1px;
-    margin: auto;
-    vertical-align: middle;
-    background-color: white;
+.memory-card.flip {
+  transform: rotateY(180deg);
 }
-.divisoria {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 70%;
-    padding:1px 24px 1px;
-    margin: auto;
-    background-color: #85182a;
+.front-face {
+  transform: rotateY(180deg);
 }
-.div-corpo {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 70%;
-    padding: 1px 24px 1px;
-    margin: auto;
-    vertical-align: middle;
-    background-color: white;
+.dados {
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  position: right;
+  border-radius: 15px;
+  background: white; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-a{
-    font-family: 'Comfortaa', cursive;
+.cronometro{
+  font-family: 'Comfortaa', cursive;
+  width: 100%;
+  text-align: center;
 }
-a:link {
-    text-decoration:none;
-    color: #85182a;
+.botao{
+  align-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px ;
+  padding-top: 15px;
 }
-a:visited {
-    text-decoration: none;
-    color: #6e1423;
+.button1{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
-a:hover {
-    text-decoration: none;
-    color: #2b0000
+.button2{
+  background-color:#f44336; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
-a:active {
-    text-decoration: none;
+.pontuacao{
+  text-align: center;
+  width: 100%;
 }
-.menu {
-    display:flex;
-    align-items: center;
-    justify-content:space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: white;
-}
-.text-cent {
-    text-align: center;
-    font-style: oblique;
-    font-stretch: extra-expanded;
-    font-variant: small-caps;
-    font-size: medium;
-    color: black;
-}
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
+.button_guri img{
+  height: auto;
+  width: 50%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
 }
