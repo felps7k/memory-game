@@ -126,12 +126,3 @@ dt{
   text-align: center;
   width: 100%;
 }
-.button_guri img{
-  height: auto;
-  width: 50%;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-}
