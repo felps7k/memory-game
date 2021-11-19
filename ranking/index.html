@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <HTML lang="pt-br">
+
 <head>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="Style.css">
@@ -14,17 +15,26 @@
         </a>
     </a>
 </head>
+
 <body>
-    <div class="div-menu">
-        <h1>Menu</h1>
-        <nav>
-            <dl class="menu">
-                <dt><a class="link" href="../index.html">Início</a></dt>
-                <dt><a class="link" href="rfacil.html">Fácil</a></dt>
-                <dt><a class="link" href="rmedio.html">Médio</a></dt>
-                <dt><a class="link" href="rdificil.html">Difícil</a></dt>
-            </dl>
-        </nav>
+    <div class="todo">
+        <div class="div-menu">
+            <h1>Ranking</h1>
+            <nav>
+                <dl class="menu">
+                    <dt><a class="link" href="../index.html">Início</a></dt>
+                </dl>
+            </nav>
+        </div>
+        <div class="div-corpo" id="todoList">
+        </div>
+        <div class="todo__new-item">
+            <div>&and;</div>
+            <input type="text" id="newItem" placeholder="digite e pressione enter para adicionar usuário">
+            <div>&and;</div>
+        </div>
     </div>
+    <script language='JavaScript' src='Script.js'>    </script>
 </body>
+
 </html>
