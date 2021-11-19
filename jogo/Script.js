@@ -262,7 +262,7 @@ const inserirItem = (evento) => {
     const bancom = getBancom();
     bancom.push({ 'nome': evento.target.value, 'pontos': point, 'dificuldade': dificuldad })
     setBancom(bancom);
-    window.location.href = "../ranking/rfacil.html";
+    window.location.href = "../ranking/index.html";
     atualizarTela();
     evento.target.value = '';
   }
