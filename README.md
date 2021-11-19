@@ -1,4 +1,6 @@
-# Memory Game
+<h1 align="center">
+🧩<br>Memory Game
+</h1>
 
 ## 📖 About
 
@@ -15,11 +17,7 @@ Tecnologias utilizadas:
 
 ## 📋 Frameworks
 
-• Bootstrap.
-
-## ⚙️ Maintenance
-
-Com a finalidade de deixar os arquivos mais organizados, foram criadas pastas separadas para cada funcionalidade do jogo, inclusive uma parte administrativa (mg-admin) para manutenção das cartas do jogo.
+• Bootstrap
 
 ### ✒️ Author
 
