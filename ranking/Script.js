@@ -6,23 +6,22 @@ let bancom = [
 
 
 const getBancom = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
-const  setBancom = (bancom) => localStorage.setItem("todoList", JSON.stringify(bancom));
+const setBancom = (bancom) => localStorage.setItem("todoList", JSON.stringify(bancom));
 
-function Crianome(nome, pontos, dificuldade, indice){
-    const item = document.createElement('label');    
+function Crianome(nome, pontos, indice) {
+    const item = document.createElement('label');
     item.classList.add('todo__item');
     //<input type="checkbox" ${pontos} data-indice= ${indice}></input>
-    item.innerHTML= `
-        <div>${nome}</div>
-        <div>${pontos}</div>
-        <div>${dificuldade}</div>
+    item.innerHTML = `
+        <div align="center">${nome}</div>
+        <div align="center">${pontos}</div>
     `
     document.getElementById('todoList').appendChild(item);
 }
 
-function limparUsuarios(){
-    const todoList= document.getElementById('todoList');
-    while(todoList.firstChild){
+function limparUsuarios() {
+    const todoList = document.getElementById('todoList');
+    while (todoList.firstChild) {
         todoList.removeChild(todoList.lastChild);
     }
 }
@@ -30,35 +29,35 @@ function limparUsuarios(){
 function atualizarTela() {
     limparUsuarios();
     const bancom = getBancom();
-    bancom.forEach( (item, indice) => Crianome (item.nome, item.pontos, item.dificuldade, indice));
+    bancom.forEach((item, indice) => Crianome(item.nome, item.pontos, indice));
 }
 
-const inserirItem = (evento) =>{
+const inserirItem = (evento) => {
     const tecla = evento.key;
-    if(tecla === 'Enter'){
+    if (tecla === 'Enter') {
         const bancom = getBancom();
-        bancom.push ({'nome': evento.target.value, 'pontos': ''})
+        bancom.push({ 'nome': evento.target.value, 'pontos': '' })
         setBancom(bancom);
         atualizarTela();
-        evento.target.value='';
+        evento.target.value = '';
     }
 }
 
 
-function clickItem (evento){
+function clickItem(evento) {
     const elemento = evento.target;
-    if(elemento.type === 'button'){
+    if (elemento.type === 'button') {
         const indice = elemento.dataset.indice;
         removerItem(indice);
-    }else if (elemento.type === 'checkbox'){
+    } else if (elemento.type === 'checkbox') {
         const indice = elemento.dataset.indice;
-        atualizarItem (indice);
+        atualizarItem(indice);
     }
 }
 
-function removerItem (indice){
+function removerItem(indice) {
     const bancom = getBancom();
-    bancom.splice (indice, 1 );
+    bancom.splice(indice, 1);
     setBancom(bancom);
     atualizarTela();
 }

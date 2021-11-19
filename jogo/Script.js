@@ -220,7 +220,6 @@ function encerraGame() {
 
 'use restrict';
 
-let dificuldad = 'Médio';
 let bancom = [
 
   //{'tarefa':'Estudar JS', 'status': ''},
@@ -232,7 +231,7 @@ let bancom = [
 const getBancom = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
 const setBancom = (bancom) => localStorage.setItem("todoList", JSON.stringify(bancom));
 
-function Crianome(nome, pontos, dificuldade, indice) {
+function Crianome(nome, pontos, indice) {
   const item = document.createElement('label');
   item.classList.add('todo__item');
   //<input type="checkbox" ${pontos} data-indice= ${indice}></input>
@@ -253,14 +252,14 @@ function limparUsuarios() {
 function atualizarTela() {
   limparUsuarios();
   const bancom = getBancom();
-  bancom.forEach((item, indice) => Crianome(item.nome, item.pontos, item.dificuldade, indice));
+  bancom.forEach((item, indice) => Crianome(item.nome, item.pontos, indice));
 }
 
 const inserirItem = (evento) => {
   const tecla = evento.key;
   if (tecla === 'Enter') {
     const bancom = getBancom();
-    bancom.push({ 'nome': evento.target.value, 'pontos': point, 'dificuldade': dificuldad })
+    bancom.push({ 'nome': evento.target.value, 'pontos': point })
     setBancom(bancom);
     window.location.href = "../ranking/index.html";
     atualizarTela();
